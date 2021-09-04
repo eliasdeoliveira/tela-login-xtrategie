@@ -1,24 +1,76 @@
-import logo from './logo.svg';
+import Routes from './router';
 import './App.css';
+import { createTheme , ThemeProvider } from '@material-ui/core';
+import { ptBR } from '@material-ui/core/locale';
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      background: {
+        primary: {
+          main: '#4d9488'
+        },
+        secondary: {
+          main: '#606062'
+        },
+        error: {
+          main: '#e57373'
+        },
+        warning: {
+          main: '#ffb74d'
+        },
+        info: {
+          main: '#64b5f6'
+        },
+        success: {
+          main: '#81c784'
+        }
+      },
+      color: {
+        primary: {
+          main: '#4d9488'
+        },
+        secondary: {
+          main: '#606062'
+        },
+        error: {
+          main: '#e57373'
+        },
+        warning: {
+          main: '#ffb74d'
+        },
+        info: {
+          main: '#64b5f6'
+        },
+        success: {
+          main: '#81c784'
+        }
+      },
+      primary: {
+        main: '#4d9488'
+      },
+      secondary: {
+        main: '#606062'
+      },
+      error: {
+        main: '#e57373'
+      },
+      warning: {
+        main: '#ffb74d'
+      },
+      info: {
+        main: '#64b5f6'
+      },
+      success: {
+        main: '#81c784'
+      },
+    }
+  }, ptBR);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+
   );
 }
 
